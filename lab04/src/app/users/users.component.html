@@ -1,0 +1,60 @@
+
+
+<form [formGroup]="userForm" (ngSubmit)="submit()" class="form-group">
+  <h1>User Form:</h1>
+  <div class="form-group" >
+    <label for="firstName">First Name:</label>
+    <input id="firstName" type="text" formControlName="firstName" class="form-control">
+    <div [hidden]="firstName.pristine || firstName.valid" class="alert alert-danger">
+      First name is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="last-name">Last Name:</label>
+    <input id="last-name" type="text" formControlName="lastName" class="form-control">
+    <div [hidden]="lastName.pristine || lastName.valid" class="alert alert-danger">
+      Last name is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone:</label>
+    <input id="phone" type="text" formControlName="phone" class="form-control">
+    <div [hidden]="phone.pristine || phone.valid" class="alert alert-danger">
+      The phone number needs to be 10 digits long with the first and fourth digit not zero!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="email" type="text" formControlName="email" class="form-control">
+    <div [hidden]="email.pristine || email.valid" class="alert alert-danger">
+      The email should be properly formatted!
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
+</form>
+<div >
+  <h1>Users:</h1>
+<table  class="table table-striped">
+  <thead>
+
+    <tr>
+      <th scope="col">First Name:</th>
+      <th scope="col">Last Name:</th>
+      <th scope="col">Phone:</th>
+      <th scope="col">Email:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let user of users">
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+

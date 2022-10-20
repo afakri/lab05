@@ -1,0 +1,12 @@
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(100, 100, 111, 0.2);
+}
+table{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
